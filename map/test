@@ -1,0 +1,17 @@
+<script>
+         jQuery.getJSON("data.json", function(points){
+         var map = new google.maps.Map(document.getElementById('map'), {
+             zoom: 5,
+             center: {lat: -33.9, lng: 151.2}
+           });
+
+
+         for (var i = 0; i < points.length; i++) {
+             var point = points[i];
+             var marker = new google.maps.Marker({
+               position: {lat: point[0], lng: point[1]},
+               map: map
+             });
+           }
+         });
+      </script>
